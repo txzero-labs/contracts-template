@@ -9,7 +9,7 @@ const SYMBOL = process.env.SYMBOL || '';
 const BASE_URI = process.env.BASE_URI || '';
 const CONTRACT_NAME = process.env.CONTRACT_NAME || '';
 
-const deployBronzeTierCollection: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
+const deployContract: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
   const { getNamedAccounts, deployments, network } = hre;
   const { deploy, log } = deployments;
   const { deployer } = await getNamedAccounts();
@@ -34,5 +34,5 @@ const deployBronzeTierCollection: DeployFunction = async function (hre: HardhatR
   }
 }
 
-export default deployBronzeTierCollection;
-deployBronzeTierCollection.tags = ['all', CONTRACT_NAME];
+export default deployContract;
+deployContract.tags = ['all', CONTRACT_NAME];
